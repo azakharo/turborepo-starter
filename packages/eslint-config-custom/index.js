@@ -1,130 +1,130 @@
 module.exports = {
   extends: [
-    "next/core-web-vitals",
-    "plugin:@typescript-eslint/recommended",
-    "airbnb-typescript",
-    "turbo",
-    "prettier"
+    'next/core-web-vitals',
+    'plugin:@typescript-eslint/recommended',
+    'airbnb-typescript',
+    'turbo',
+    'prettier',
   ],
-  "plugins": [
-    "@typescript-eslint",
-    "simple-import-sort"
-  ],
+  plugins: ['@typescript-eslint', 'simple-import-sort'],
   rules: {
-    "@next/next/no-html-link-for-pages": "off",
+    '@next/next/no-html-link-for-pages': 'off',
+
+    'no-console': 'error',
 
     // Too restrictive, writing ugly code to defend against a very unlikely scenario: https://eslint.org/docs/rules/no-prototype-builtins
-    "no-prototype-builtins": "off",
+    'no-prototype-builtins': 'off',
     // https://stackoverflow.com/a/64024916/286387
-    "no-use-before-define": "off",
+    'no-use-before-define': 'off',
     // Allow for..of syntax
-    "no-restricted-syntax": [
-      "error",
-      "ForInStatement",
-      "LabeledStatement",
-      "WithStatement"
+    'no-restricted-syntax': [
+      'error',
+      'ForInStatement',
+      'LabeledStatement',
+      'WithStatement',
     ],
     // https://basarat.gitbooks.io/typescript/docs/tips/defaultIsBad.html
-    "import/prefer-default-export": "off",
-    "import/no-default-export": "off",
+    'import/prefer-default-export': 'off',
+    'import/no-default-export': 'off',
     // It's not accurate in the monorepo style
-    "import/no-extraneous-dependencies": "off",
+    'import/no-extraneous-dependencies': 'off',
     // TODO set off only for TS and JS modules
-    "import/extensions": "off",
-    "import/first": "error",
-    "import/newline-after-import": "error",
-    "import/no-duplicates": "error",
-    "simple-import-sort/imports": "error",
-    "simple-import-sort/exports": "error",
+    'import/extensions': 'off',
+    'import/first': 'error',
+    'import/newline-after-import': 'error',
+    'import/no-duplicates': 'error',
+    'simple-import-sort/imports': 'error',
+    'simple-import-sort/exports': 'error',
 
     // Too restrictive: https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/destructuring-assignment.md
-    "react/destructuring-assignment": "off",
-    "react/prop-types": "off",
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn",
+    'react/destructuring-assignment': 'off',
+    'react/prop-types': 'off',
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
     // No jsx extension: https://github.com/facebook/create-react-app/issues/87#issuecomment-234627904
-    "react/jsx-filename-extension": "off",
-    "react/require-default-props": "off",
-    "react/jsx-props-no-spreading": "off",
+    'react/jsx-filename-extension': 'off',
+    'react/require-default-props': 'off',
+    'react/jsx-props-no-spreading': 'off',
 
     // Allow most functions to rely on type inference. If the function is exported, then `@typescript-eslint/explicit-module-boundary-types` will ensure it's typed.
-    "@typescript-eslint/explicit-function-return-type": "off",
-    "@typescript-eslint/no-use-before-define": [
-      "error",
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/no-use-before-define': [
+      'error',
       {
-        "functions": false,
-        "classes": true,
-        "variables": true,
-        "typedefs": true
-      }
+        functions: false,
+        classes: true,
+        variables: true,
+        typedefs: true,
+      },
     ],
     // Some variable names are defined in the backend (can"t change this).
     // Also sometimes the following var names are necessary TYPE__TYPE_NAME
-    "@typescript-eslint/naming-convention": [
-      "error",
+    '@typescript-eslint/naming-convention': [
+      'error',
       {
-        "selector": "variable",
-        "format": null
+        selector: 'variable',
+        format: null,
         // disable rule
       },
       {
-        "selector": "function",
-        "format": [
-          "camelCase",
-          "PascalCase" // for React components
-        ]
+        selector: 'function',
+        format: [
+          'camelCase',
+          'PascalCase', // for React components
+        ],
       },
       {
-        "selector": "typeLike",
-        "format": [
-          "PascalCase"
-        ]
-      }
+        selector: 'typeLike',
+        format: ['PascalCase'],
+      },
     ],
-    "@typescript-eslint/no-explicit-any": "error",
+    '@typescript-eslint/no-explicit-any': 'error',
 
     // Enable some rules for async JS
-    "no-promise-executor-return": "error",
-    "require-atomic-updates": "error",
-    "max-nested-callbacks": "error",
-    "no-return-await": "error"
+    'no-promise-executor-return': 'error',
+    'require-atomic-updates': 'error',
+    'max-nested-callbacks': 'error',
+    'no-return-await': 'error',
   },
   parserOptions: {
-    "project": "./tsconfig.json",
+    project: './tsconfig.json',
     babelOptions: {
-      presets: [require.resolve("next/babel")]
-    }
+      presets: [require.resolve('next/babel')],
+    },
   },
-  "overrides": [
+  overrides: [
     /////////////////////////////////////////////
     // override "simple-import-sort" config
     {
-      "files": ["*.js", "*.jsx", "*.ts", "*.tsx"],
-      "rules": {
-        "simple-import-sort/imports": [
-          "error",
+      files: ['*.js', '*.jsx', '*.ts', '*.tsx'],
+      rules: {
+        'simple-import-sort/imports': [
+          'error',
           {
-            "groups": [
+            groups: [
               // Packages `react` related packages come first.
-              ["^(react|next)", "^@?\\w"],
+              ['^(react|next)', '^@?\\w'],
               // Internal packages.
               [
-                "^src(/.*|$)",
+                '^src(/.*|$)',
                 // Parent imports. Put `..` last.
-                "^\\.\\.(?!/?$)", "^\\.\\./?$",
+                '^\\.\\.(?!/?$)',
+                '^\\.\\./?$',
                 // Other relative imports. Put same-folder imports and `.` last.
-                "^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$",
+                '^\\./(?=.*/)(?!/?$)',
+                '^\\.(?!/?$)',
+                '^\\./?$',
                 // Images
-                "^(IMAGES)(/.*|$)"
+                '^(IMAGES)(/.*|$)',
               ],
               // Side effect imports.
-              ["^\\u0000"],
+              ['^\\u0000'],
               // Style imports.
-              ["^.+\\.?(css)$"]
-            ]
-          }
-        ]
-      }
-    }
-  ]
+              ['^.+\\.?(css)$'],
+            ],
+          },
+        ],
+      },
+    },
+  ],
 };
