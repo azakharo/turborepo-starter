@@ -6,6 +6,7 @@ export default function Page() {
   let myvar3 = 1;
   console.log(
 'ha-ha-ha');
+  console.log('ha2');
 
 
   return (
