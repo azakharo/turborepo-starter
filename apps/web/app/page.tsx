@@ -7,6 +7,7 @@ export default function Page() {
   console.log(
 'ha-ha-ha');
 
+  
   return (
     <>
       <Header text="Web" />

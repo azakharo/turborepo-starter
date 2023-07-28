@@ -6,9 +6,5 @@ module.exports = {
   'src/**/*.(ts|tsx|js|jsx)': filenames => [
     `npm run lint`,
     `npm run code-format`,
-  ],
-
-  // // Format MarkDown and JSON
-  // 'src/**/*.(md|json)': filenames =>
-  //   `npx prettier --write ${filenames.join(' ')}`,
+  ]
 };
