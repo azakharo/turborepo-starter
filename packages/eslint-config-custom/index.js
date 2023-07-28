@@ -10,7 +10,7 @@ module.exports = {
   rules: {
     '@next/next/no-html-link-for-pages': 'off',
 
-    'no-console': 'error',
+    'no-console': 'warn',
 
     // Too restrictive, writing ugly code to defend against a very unlikely scenario: https://eslint.org/docs/rules/no-prototype-builtins
     'no-prototype-builtins': 'off',
