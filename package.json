@@ -1,6 +1,7 @@
 {
   "private": true,
   "scripts": {
+    "prepare": "husky install",
     "build": "turbo run build",
     "dev": "turbo run dev",
     "type-check": "turbo run type-check",
@@ -13,8 +14,10 @@
     "@turbo/gen": "^1.9.7",
     "eslint": "^7.32.0",
     "eslint-config-custom": "*",
-    "prettier-config-custom": "*",
+    "husky": "8.0.3",
+    "lint-staged": "13.2.3",
     "prettier": "^2.5.1",
+    "prettier-config-custom": "*",
     "turbo": "latest"
   },
   "name": "my-turborepo",
