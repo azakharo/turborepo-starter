@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "type-check": "tsc --noEmit",
-    "lint": "eslint \"src/**/*.ts*\"",
+    "lint": "eslint --fix \"src/**/*.ts*\"",
     "code-format": "prettier ./src --write",
     "generate:component": "turbo gen react-component"
   },

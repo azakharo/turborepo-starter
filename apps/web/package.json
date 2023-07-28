@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "type-check": "tsc",
-    "lint": "next lint",
+    "lint": "eslint ./app --fix",
     "code-format": "prettier ./app --write"
   },
   "dependencies": {
