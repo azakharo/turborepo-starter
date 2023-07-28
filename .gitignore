@@ -2,6 +2,8 @@
 
 /.idea
 
+*.tsbuildinfo
+
 # dependencies
 node_modules
 .pnp

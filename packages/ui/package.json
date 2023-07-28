@@ -5,6 +5,7 @@
   "types": "./index.tsx",
   "license": "MIT",
   "scripts": {
+    "type-check": "tsc --noEmit",
     "lint": "eslint \"src/**/*.ts*\"",
     "generate:component": "turbo gen react-component"
   },
