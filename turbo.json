@@ -10,6 +10,7 @@
       "outputs": []
     },
     "lint": {},
+    "code-format": {},
     "dev": {
       "cache": false,
       "persistent": true
