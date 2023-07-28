@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 
-// let myfunc = (a, b) => a + b;
+//let myfunc = (a, b) => a + b;
 
 export const Button = () => {
   // let myvar = 1;
