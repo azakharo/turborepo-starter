@@ -1,0 +1,7 @@
+node_modules
+.github
+*.html
+
+packages/eslint-config-custom/*
+packages/prettier-config-custom/*
+packages/tsconfig/*
